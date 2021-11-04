@@ -1,0 +1,62 @@
+<div class="container p-4">
+    <div class="row">
+        {{#each orders}}
+            <div class="col-md-12">
+                <div class="card center-text">
+                    <div class="card-body">
+                        <a href='orders/#orderid/{{orderid}}' target="blank">
+                            <h3 class="card-tilte text-uppercase">
+                                {{ orderid }}
+                            </h3>
+                        </a>
+                            <div class="container">
+                              <div class="row align-items-center">
+                                <div class="" scope="col">#</th>
+                                    <label>Order ID</label>
+                                    <th scope="col">{{ orderid }}</th>
+                                    <label>Order Date</label>
+                                    <th scope="col">{{ order_date }}</th>
+                                </div>
+                                <div>  
+                                    <label>Sub Total</label>
+                                    <th scope="col">{{ subtotal }}</th>
+                                    <label>Taxes</label>
+                                    <th scope="col">{{ taxes }}</th>
+                                    <label>Total</label>
+                                    <th scope="col">{{ total}}</th>
+                                </div>
+                                <div>
+                                    <label>Status paid</label>
+                                    <th scope="col">{{ paid }}</th>
+                                <div>
+                                    <label>Customer Id</label>
+                                    <th scope="col">{{ userid }}</th>
+                                    <label>shipping ID</label>
+                                    <th scope="col">{{ shippingid }}</th>
+                                    <label>Payment ID</label>
+                                    <th scope="col">{{ paymentid }}</th>
+                                </div>
+                                <div>
+                                    <label>Created</label>
+                                    <th scope="col">{{ timeago order_date }}</th>
+                                </div>
+                            </div>
+                            <div>
+                                <a href="/orders/edit/{{orderid}}" class="btn btn-warning">EDIT</a>
+                                <a href="/orders/delete/{{orderid}}" class="btn btn-danger">DELETE</a>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        {{else}}
+        <div class='col-md-12 mx-auto'>
+            <div class='card card-body text-center'>
+                <p>There is not orders </p>
+                <a href="/orders/add">Create one!</a>
+
+            </div>
+
+        <div>
+        {{/each}}
+    </div>
+</div>
