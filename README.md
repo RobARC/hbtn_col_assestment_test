@@ -105,3 +105,21 @@ gov_id stands for government issued ID (so it's alphanumeric)
 # Entity - Relation Model
 
 <img src='./src/images/MERHBTN.png'>
+
+## Dependecies
+
+Take a look to a package.json
+
+## Data Base:
+
+You must use mysql version 8.0. To create the data base and tables, use the SQL commands
+content in db.sql file.
+
+## start the app
+
+Use **npm run dev**  in the command console to initialize the app. Remember this is a nodejs backend so you must have node installed on your system.
+
+## Demo
+
+
+
