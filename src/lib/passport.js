@@ -50,9 +50,9 @@ passport.use('local.signup', new LocalStrategy({
 }));
 
 passport.serializeUser((user, done) => {
-    done(null, user.userid);
+    return done(null, user.userid);
 });
 passport.deserializeUser(async (userid, done) => {
     const rows = await pool.query('SELECT * FROM users WHERE userid = ?', [userid]);
-    done(null, rows[0]);
+    return done(null, rows[0]);
 });

@@ -8,21 +8,21 @@ router.get('/login', (req, res) => {
     res.render('login/signin');
 });
 
-router.get('/signup', (req, res) => {
+router.get('/signup', isNotLoggedIn, (req, res) => {
     res.render('login/signup');
 });
 
-router.post('/login', passport.authenticate('local.signup', {
+router.post('/login', isNotLoggedIn, passport.authenticate('local.signup', {
     successRedirect: '/profile',
     failureRedirect: '/login',
     failureFlash: true
 }));
 
-router.get('/signin', (req, res) => {
+router.get('/signin', isNotLoggedIn, (req, res) => {
     res.render('login/signin');
 });
 
-router.post('/signin', passport.authenticate('local.signin', {
+router.post('/signin', isNotLoggedIn, passport.authenticate('local.signin', {
     successRedirect: '/profile',
     failureRedirect: '/signin',
     failureFlash: true
@@ -32,7 +32,7 @@ router.get('/profile', isLoggedIn, (req, res) => {
     res.render('profiles');
 });
 
-router.get('/logout', (req, res) => {
+router.get('/logout', isLoggedIn, (req, res) => {
     req.logOut();
     res.redirect('/signin')
 })

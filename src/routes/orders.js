@@ -30,6 +30,19 @@ router.get('/', isLoggedIn, async (req, res) => {
     res.render('orders/list', { orders });
 });
 
+router.get('/:orderid', isLoggedIn, async (req, res) => {
+    const { orderid } = req.params;
+    const order = await pool.query("SELECT * FROM orders WHERE orderid = ?", [orderid]);
+
+    const myJson = res.json({ order });
+    //res.render('/orders/order', myJson);
+
+});
+
+router.get('/orders/order', isLoggedIn, async (req, res) => {
+
+});
+
 router.get('/delete/:orderid', isLoggedIn, async (req, res) => {
     /*console.log(req.params.orderid);*/
     /*res.send('DELETED')*/
@@ -58,7 +71,6 @@ router.post('/edit/:orderid', isLoggedIn, async (req, res) => {
     await pool.query('UPDATE orders set ? WHERE orderid = ?', [newOrder, orderid]);
     req.flash('success', "Order updated succesfully");
     res.redirect('/orders');
-
 });
 
 
