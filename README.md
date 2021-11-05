@@ -121,5 +121,36 @@ Use **npm run dev**  in the command console to initialize the app. Remember this
 
 ## Demo
 
+<img src='./src/images/demo1.png'>
+
+#### Endpoint Login
+
+<br>
+
+#### Session started 
+
+Pay atention to the nav bar, In it appear, several items, that there was not before. Them you singin in the application you can work it like CRUD API, creating, reading, updating and deleting orders and users.
+
+<img src='./src/images/demo2.png'>
+<br>
+
+#### Orders Lists
+<br>
+<img src='./src/images/demo3.png'>
+
+#### Endpoint Order specific ID
+<br>
+<img src='./src/images/demo4.png'>
+<br>
+
+#### Output in JSON format Order specific ID
+<br>
+<img src='./src/images/demo5.png'>
+
+
+
+
+
+
 
 
